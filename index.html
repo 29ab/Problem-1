@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            display: grid;
+            grid-template-columns: 260px 700px 260px;
+        }
+        #frist_col{
+            /* width: 260px; */
+            border: 1px solid black;
+        }
+        img{
+            width: 40px;
+            margin: auto 5px;
+        }
+        #button_logo{
+            display: flexbox;
+           
+        }
+        button > img{
+            width: 30px;
+        }
+        button > p{
+            margin:  auto 10px;
+            font-size: 20px;
+        }
+        button{
+            display: flex;
+            padding: 10px;
+            border-radius: 50px;
+            background-color: white;
+            border: white;
+        }
+        button:hover{
+            background-color: #ECEFF1;
+        }
+        #sec_div{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id = "frist_col">
+        <img src = "https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter_colored_svg-128.png"  style="margin: 0 15px;">
+        <div id = "button_logo"> 
+
+            <button style=" margin: 5px;">
+            <img src = "https://cdn1.iconfinder.com/data/icons/twitter-ui-glyph/48/Sed-18-128.png">
+            <p style="font-family: 'DM Sans', sans-serif;">Home</p>
+            </button>
+
+            <button style=" margin: 5px;">
+                <img src = "https://cdn4.iconfinder.com/data/icons/feather/24/hash-128.png" style="width: 25px;">
+                <p>Explore</p>
+            </button>
+
+            <button style=" margin: 5px;">
+                <img src = "https://cdn2.iconfinder.com/data/icons/user-interface-169/32/bell-128.png" style="width: 25px;">
+                <p>Notification</p>
+            </button>
+
+            <button style=" margin: 5px;">
+                <img src = "https://cdn2.iconfinder.com/data/icons/squircle-ui/32/Mail-128.png">
+                <p>Message</p>
+            </button>
+
+            <button style=" margin: 5px;">
+                <img src = "https://cdn0.iconfinder.com/data/icons/harmonicons-02/64/bookmark-128.png" style="width: 25px;">
+                <p>Bookmark</p>
+            </button>
+
+            <button style=" margin: 5px;">
+                <img src = "https://cdn2.iconfinder.com/data/icons/interface-solid-7/30/interface-solid-task-lists-128.png" style="width: 20px;">
+                <p>List</p>
+            </button>
+
+            <button style=" margin: 5px;">
+                <img src = "https://cdn2.iconfinder.com/data/icons/lightly-icons/24/user-96.png" style="width: 25px;">
+                <p>Profile</p>
+            </button>
+
+            <button style=" margin: 5px;">
+                <img src = "https://cdn2.iconfinder.com/data/icons/lightly-icons/24/more-alt-96.png" style="width: 25px;">
+                <!-- <h4>More</h4> -->
+                <p>More</p>
+            </button>
+
+            <button style=" width:250px;background-color: #1d9bf0; margin: 5px;"><p style="margin: auto 80px;font-family: 'DM Sans', sans-serif; color: white;">Tweet</p></button>
+
+        </div>
+    </div>
+    <div id = "sec_div">
+        <h2>Home</h2>
+        <hr/>
+        <div style="display:grid; grid-template-columns: 60px 500px; ">
+            <img src = "https://images.pexels.com/photos/6322920/pexels-photo-6322920.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style=" width: 60px;height: 60px; border-radius:100%">
+            <input type="text" placeholder="What's heapening?" style="font-size: 20px; margin: 5px 10px; border: white;"> 
+        </div>
+        <button style="width: 200px; padding: 3px;margin: 10px 70px;"><p style="margin: 0 22px; font-size: 15px;">Every one can reply</p></button>
+        <hr style="width: 600px; margin: 0 auto"/>
+    </div>
+    
+    <div>
+
+    </div>
+</body>
+</html>
