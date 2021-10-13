@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    div.container{
+        width: 100%;
+        height: 400px;
+        background-color:  #23282e;
+        margin-top: 100px;
+    }
+    .container > div{
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        padding-top: 30px;
+    }
+    .container > div h2{
+        /* width: 70%; */
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        text-align: center;
+        color: white;
+        padding-top: 15px;
+    }
+    form{
+        width: 90%;
+        margin: auto;
+        margin-top: 5%; 
+    }
+    label {
+        color: white;
+        font-size: 12px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+    }
+    form div{
+        display: inline-block;
+        margin: 20px;
+        margin-left: 40px;
+    }
+
+    form div > input{
+        padding: 7px;
+        border-radius: 7px;
+        border: 0;
+        
+    }
+    input[type="button"]{
+        color: white;
+        background-color: green;
+        border-radius: 5px;
+        width: 150px;
+        border-radius: 5px;
+        padding: 10px;
+        border: 0;
+    }
+    form + p {
+        text-align: center;
+        color: gray;
+        font-size: 12px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+    }
+    form + p > span{
+        color: whitesmoke;
+    }
+</style>
+<body>
+    <div class = "container">
+        <div>
+            <h2>Get started for free -join the millions of developers already
+                using GitHub to share their code, work together, and build
+                amazing things.
+
+            </h2>
+        <form>
+            <div>
+                <label for="un">UserNamme</label>
+                <br/>
+                <input id = "un" type= "text" placeholder="Pick a username" />
+            </div>
+            <div>
+                <label for="un">Email</label>
+                <br/>
+                <input id = "un" type= "text" placeholder="Your Email address" />
+            </div>
+            <div>
+                <label for="un">Password</label>
+                <br/>
+                <input id = "un" type= "text" placeholder="Creat a password" />
+            </div>
+            <div>
+                <input id = "un" type= "button" value="Sign-up for Github" />
+            </div>
+        </form>
+        <p>By clicking "Sign up for GitHub", you agree to our <span>terms of service</span> terms of service  <span>and privacy statement.</span> We'll occasionally send you account related emails.
+  </p>
+        </div>
+    </div>
+</body>
+</html>
