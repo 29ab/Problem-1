@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid_zig-zag</title>
+    <style>
+        #mid{
+            width: 50%;
+            background-color: white;
+            margin: 100px auto;
+        }
+        .rowOne {
+            display: grid;
+            grid-template-areas: "a b b c"
+                                 "d d e f"
+                                 "g h i i";
+        }
+        .rowOne > div{
+            background-color: teal;
+            margin: 10px;
+            padding: 10px;
+            height: 100px;
+            border-radius: 5px;
+            
+        }
+        .rowOne > div:nth-child(1){
+            grid-area: a;
+        }
+        .rowOne > div:nth-child(2){
+            grid-area: b;
+        }
+        .rowOne > div:nth-child(3){
+            grid-area: c;
+        }
+        .rowOne > div:nth-child(4){
+            grid-area: d;
+        }
+        .rowOne > div:nth-child(5){
+            grid-area: e;
+        }
+        .rowOne > div:nth-child(6){
+            grid-area: f;
+        }
+        .rowOne > div:nth-child(7){
+            grid-area: g;
+        }
+        .rowOne > div:nth-child(8){
+            grid-area: h;
+        }
+        .rowOne > div:nth-child(9){
+            grid-area: i;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id = "mid">
+            <div class="rowOne">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
