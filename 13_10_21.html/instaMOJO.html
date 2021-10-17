@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <style>
+        
+        #container{
+            width: 1024px;
+            margin: auto;
+        }
+        #container > div:nth-child(1){
+            width:1024px;
+            border: 1px solid white;
+            background-color: #f5f4f7;
+            margin: auto;
+        }
+        #container > div:nth-child(2){
+            width:1024px;
+            /* border: 1px solid red; */
+            margin: auto;
+        }
+
+        .text-center{
+            text-align: center;
+        }
+        .fontstyle{
+            font-family: 'Nunito Sans', sans-serif;
+            font-weight: bolder;
+            color: #311B92;
+        }
+        .fontstyle2{
+            font-family: 'Nunito Sans', sans-serif;
+            color: #9E9E9E;
+        }
+        .empty{
+            border:1px solid #311B92;
+            width:80px;
+            text-align: center;
+            margin: auto;
+        }
+        div > table{
+            width: 900px;
+            /* border: 1px solid black; */
+            margin: auto;
+        }
+        tr > td{
+            font-family: 'Quicksand', sans-serif;
+        }
+        .fontRed > td:nth-child(2){
+            color: red;
+        }
+            
+        #table1{
+            background-color: #FAFAFA;
+            margin: auto;
+
+        }
+        .marg{
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id = "container">
+        <div>
+            <div>
+                <h1 class = "text-center fontstyle">Comparing Pricing</h1>
+                <div class="empty"></div>
+                <p class="text-center fontstyle">Instamojo's overall costs compared to other morden platforms & traditional gateways</p>
+              <div class="marg">
+                <table id = "table1">
+                    <tr class="gap">
+                        <td class="fontstyle2">FEES & OTHER CHARGES</td>
+                        <td class = "fontstyle">insatamojo</td>
+                        <td class="fontstyle2">MORDEN PLATFORMS</td>
+                        <td class="fontstyle2">TRADITIONAL GATEWAYS</td>
+                    </tr>
+                    <tr class = "fontRed">
+                        <td>Setup Fee</td>
+                        <td>Free</td>
+                        <td> &#8377 0 to &#8377 1000/ year</td>
+                        <td>&#8377 25000 / year</td>
+                    </tr>
+                    <tr class = "fontRed">
+                        <td>Annual Maintainence</td>
+                        <td>Free</td>
+                        <td>&#8377 10000 to &#8377 25000 / year</td>
+                        <td>&#8377 10000 to &#8377 25000</td>
+                    </tr>
+                    <tr class = "fontRed">
+                        <td>Minimum Comitment</td>
+                        <td>No Commitment</td>
+                        <td>Varies</td>
+                        <td>Upto &#8377 100000 / month</td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="marg">
+                <h1 class = "text-center fontstyle">No Hidden Costs</h1>
+                <div class="empty"></div>
+                <p class="text-center fontstyle">Costs time and effort spent increase hidden costs. But not on Instamojo</p>
+              <div>
+                <table>
+                    <tr>
+                        <td class="fontstyle2">COSTS</td>
+                        <td class = "fontstyle">insatamojo</td>
+                        <td class="fontstyle2">MORDEN PLATFORMS</td>
+                        <td class="fontstyle2">TRADITIONAL GATEWAYS</td>
+                    </tr>
+                    <tr class = "fontRed">
+                        <td>Time to get started</td>
+                        <td>3-5 minutes</td>
+                        <td>1-4 weeks</td>
+                        <td>4-8 weeks</td>
+                    </tr>
+                    <tr class = "fontRed">
+                        <td>Developer Costs for Integration</td>
+                        <td>Not Needed</td>
+                        <td>&#8377 1Lakh+</td>
+                        <td>&#8377 1Lakh+</td>
+                    </tr>
+                    <tr class = "fontRed">
+                        <td>Legal Cost of agreements</td>
+                        <td>Not Needed</td>
+                        <td>Varies</td>
+                        <td>&#8377 1 Lakhs</td>
+                    </tr>
+                </table>
+              </div> 
+            </div>
+        </div>
+
+    </div>   
+</body>
+</html>
