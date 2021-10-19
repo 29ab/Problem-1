@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        #main{
+            padding:20px;
+        }
+        #mid{
+            display: grid;
+            grid-template-areas: "nav nav  nav nav nav"
+                                  "lef lef lef lef rig1"
+                                  "lef lef lef lef rig2"
+                                  "lef lef lef lef rig3";
+            gap:22px;
+            column-gap: 35px;                     
+        }
+        #yellow{
+            grid-area: nav;
+            background-color: yellow;
+            height: 100px;
+        }
+        #left{
+            grid-area: lef;
+            background-color: red;
+            height: 450px;
+            
+        }
+        #right-1{
+            grid-area: rig1;
+            background-color: lime;
+            height: 134px;
+            padding: 0px;
+            
+        }
+        #right-2{
+            grid-area: rig2;
+            background-color: lime;
+            height: 134px;
+            
+        }
+        #right-3{
+            grid-area: rig3;
+            background-color: lime;
+            height: 134px;
+            
+        }
+        .font{
+            font-size: 30px;
+        }
+
+        @media screen and (max-width:900px) and (min-width:550px){
+            #mid{
+                display: grid;
+                grid-template-areas: "nav nav  nav"
+                                     "lef lef lef"
+                                     "rig1 rig2 rig3";
+                                    
+                gap:22px;
+                column-gap: 35px;                     
+            }
+            #left{
+                grid-area: lef;
+                background-color: red;
+                height: 350px;
+            }
+        }
+
+        @media screen and (max-width:549px) and (min-width:0px){
+            #mid{
+                display: grid;
+                grid-template-areas: "nav nav"
+                                     "lef lef"
+                                     "rig1 rig1"
+                                     "rig2 rig2"
+                                     "rig3 rig3";
+                                    
+                gap:20px;                   
+            }
+            #left{
+                grid-area: lef;
+                background-color: red;
+                height: 250px;
+            }
+
+            #right-1{
+                height: 134px;
+                background-color: lime;
+            
+            }
+            #right-2{
+                background-color: lime;
+                height: 134px;
+            
+            }
+            #right-3{
+                background-color: lime;
+                height: 134px;
+            
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id = "main">
+        <div id = "mid">
+            <div id = "yellow" class="font">Navigation</div>
+            <div id = "left" class="font">Left Box</div>
+            <div id = "right-1" class="font">Right Box-1</div>
+            <div id = "right-2" class="font">Right Box-2</div>
+            <div id = "right-3" class="font">Right Box-3</div>
+        </div>
+    </div>
+</body>
+</html>
