@@ -52,13 +52,15 @@ console.log(store2);
 
 // Problem -5 : Array some criteria
 
-// var arr5 = [2, 4, 5, 3, 6, 8];
+var arr5 = [2, 4, 5, 3, 6, 8];
 
-// var even = function(ele){
+var even = function(ele,i){
+    if( ele % 2 == 0 && i % 2 == 0)
+    {
+        return ele % 2 == 0 && i % 2 == 0;
+    }
+}
 
-//     console.log(ele);
-// }
 
-
-// var godown = arr5.filter(even);
-// console.log(godown);
+var godown = arr5.filter(even);
+console.log(godown);
