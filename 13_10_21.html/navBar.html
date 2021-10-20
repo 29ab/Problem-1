@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #main{
+            width: 60%;
+            margin: auto;
+            padding: 15px;
+        }
+        #mid{
+            display: grid;
+            grid-template-areas:"nav nav nav nav "
+                                "lef rig rig rig" 
+                                "lef rig rig rig";
+            gap:20px;
+            column-gap: 25px;
+        }
+
+        #yellow{
+            grid-area: nav;
+            border-radius: 5px;
+            background-color: red;
+            height: 80px;
+        }
+        #red{
+            grid-area: lef;
+            border-radius: 5px;
+            background-color: lime;
+            height: 450px;
+        }
+        #green{
+            grid-area: rig;
+            border-radius: 5px;
+            background-color: teal;
+            height: 450px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "main">
+        <div id = "mid">
+            <div id = "yellow"></div>
+            <div id = "red"></div>
+            <div id = "green"></div>
+        </div>
+    </div>
+</body>
+</html>
