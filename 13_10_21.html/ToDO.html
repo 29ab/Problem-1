@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo list</title>
+    <style>
+        body{
+            background-color: blanchedalmond;
+        }
+        #mid{
+            width: 60%;
+            /* background-color: white; */
+            margin: auto;
+        }
+        th,tr{
+            background-color: whitesmoke;
+            border: 1px solid black;
+            width: 100px;
+            padding: 5px;
+        }
+        tr > th{
+            font-size: 17px;
+            font-weight: bold;
+        }
+        form{
+            font-size: 20px; ;        
+        }
+        form > input{
+            height: 20px;
+        }
+        #priority{
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id = "mid">
+            <h1>Todo List</h1>
+
+    <form>
+        <label>Name</label>
+        <input id= "name" type="text" placeholder="Enter Todo">
+        <label>Quantity</label>
+        <input id = "qty" type="number" placeholder="Enter Quantity">
+        <label>Priority</label>
+        <select id = "priority">
+            <option value="">--</option>
+            <option value="High">High</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+    <hr/>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Priority</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody></tbody>
+    </table>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+     document.querySelector("form").addEventListener("submit",addItem);
+
+    function addItem(event) {
+        event.preventDefault();
+        var name = document.getElementById("name").value;
+        var qty = document.getElementById("qty").value;
+        var priority = document.getElementById("priority").value;
+        // console.log(name,qty,priority);
+
+        var row = document.createElement("tr");
+
+        var td1 = document.createElement("td");
+        td1.textContent = name;
+
+        var td2 = document.createElement("td");
+        td2.textContent = qty;
+
+        var td3 = document.createElement("td");
+        td3.textContent = priority;
+        
+        if(priority === "High"){
+            td3.style.color = "red";
+        }
+        
+        var td4 = document.createElement("td");
+        td4.textContent = "Delete"
+        td4.addEventListener("click",deleteItems);
+
+        row.append(td1,td2,td3,td4);
+
+        var all = document.querySelector("tbody");
+        all.append(row);
+
+        document.getElementById("name").value = document.getElementById("qty").value = document.getElementById("priority").value = "";
+    }
+
+    function deleteItems(event) {
+        event.target.parentNode.remove();
+    }
+</script>
