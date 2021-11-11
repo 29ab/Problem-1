@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #main{
+            width: 50%;
+        }
+        .mid {
+            border: 1px solid red;
+            display: grid;
+            grid-template-areas: 
+            "one two two three";
+            
+            gap:5px;
+            column-gap: 0px;
+        
+        }
+        
+        
+        .mid > div:nth-child(1){
+            grid-area: one;
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+        }
+        .mid > div:nth-child(2){
+            grid-area: two;
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+        .mid > div:nth-child(3){
+            grid-area: three;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+        /* #D{
+            grid-area: four;
+        }
+        #E{
+            grid-area: five;
+        }
+        #F{
+            grid-area: six;
+        }
+        #G{
+            grid-area: sev;
+        }
+        #H{
+            grid-area: eight;
+        }
+        #I{
+            grid-area: nine;
+        } */
+    </style>
+</head>
+<body>
+        <div id = "main">
+            <div class = "mid">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </div>
+</body>
+</html>
