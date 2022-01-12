@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #video_details{
+            width: 1350px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id ="video_details"></div>
+        <div id = "recomend"></div>
+    </div>
+</body>
+</html>
+<script>
+    let view_data = JSON.parse(localStorage.getItem("clicked_item"));
+    console.log('view_data:', view_data)
+
+    let video_div = document.getElementById("video_details");
+    // div.innerHTML = view_data;
+    let iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube.com/embed/${view_data.videoId}`;
+    iframe.height= "100%";
+    iframe.width="100%";
+    // iframe.title = snippet.title;
+    iframe.setAttribute("allowfullscreen", true);
+
+    video_div.append(iframe);
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <form>
+            <input type="text" placeholder="Name" id="name">
+            <input type="text" placeholder="Email" id="email">
+            <input type="text" placeholder="Password" id="password">
+            <input type="text" placeholder="UserName" id="username">
+            <input type="text" placeholder="Mobile" id="mobile">
+            <input type="text" placeholder="Description" id="description">
+        </form>
+        <button onclick="Register()">send</button>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    async function Register(){
+
+        async function Login(){
+            let login_data = {
+                username: document.getElementById("login_username").value,
+                password: document.getElementById("login_password").value,
+            };
+        }
+    
+       login_data = JSON.stringify(login_data);
+       let login_api = `https://masai-api-mocker.herokupp.com/auth/register`;
+
+       //fetch request
+       let response = await fetch(login_api , {
+           method: 'POST',
+           body:login_data,
+           
+           headers:{
+               "Content-Type": "application/json",
+           },
+       })
+    }
+
+
+    // signup_data = JSON.stringify(signup_data); //reassign
+    // console.log('signup_data:', signup_data);
+
+    // let register_api = 'https://masai-api-mocker.herokupp.com/auth/register';
+
+    // //GET or POST ?
+    // //body send data to body.
+    // let response = await fetch(register_api, {
+    //     method : "POST",
+    //     body: signup_data,
+
+    //     //more extra information about my request.
+    //     headers: {
+    //         "Content-Type": "application/json",
+
+    //     },
+    // });
+
+    //     let data = await response.json();
+    //     console.log('data:', data);
+    // }
+</script>

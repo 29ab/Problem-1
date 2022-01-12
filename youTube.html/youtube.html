@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="YouTube.css"> -->
+
+<style>
+      #main{
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: space-between;
+  /* margin-bottom: -5px; */
+  border-bottom: 1px solid black ;
+}
+
+#mid{
+  display:grid;
+  grid-template-columns: 50px 1250px;
+  column-gap: 40px;
+}
+#search_results {
+  display: grid;
+  /* grid-template-columns: repeat(4, 20%);
+  grid-gap: 5%; */
+  grid-template-columns: 300px 300px 300px 300px;
+  column-gap: 10px;
+}
+#search_results > div > h4{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+#search_results > img{
+  width: 100%;
+}
+#youtubelogo > h3{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-weight: bolder;
+  margin-top: -4px;
+  margin-left: 1px;
+  font-size: 25px;
+}
+#youtubelogo{
+  display: flex;
+}
+#youtubelogo > img{
+  height: 30px;
+}
+#youTubeMain{
+  display: flex;
+  column-gap: 25px;
+  margin-left: 25px;
+}
+#youTubeMain > img{
+  /* width: 50px; */
+  height: 20px;
+  margin-top: 6px;
+}
+#searchbar{
+  display: grid;
+  grid-template-columns: 500px 80px 50px;
+}
+#searchbar > img{
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+  margin-left: 20px;
+  /* padding: 5px; */
+  /* margin-top: 5px; */
+  /* border: 1px solid red; */
+}
+#searchbar > input{
+  width: 495px;
+  height: 35px;
+}
+#buttonSearch{
+  /* margin-left: 0; */
+  height: 40px;
+  /* margin-left: 0px; */
+}
+#fourimage{
+  display: flex;
+  gap: 20px;
+}
+#fourimage > img:nth-child(4){
+  border-radius: 50%;
+}
+#fourimage > img{
+  height: 30px;
+  margin-right: 10px;
+}
+  
+  #leftside{
+      margin-top: 5%;
+      margin-left: 20px;
+      text-align: center;
+  }
+  #leftside > img{
+    height: 25px;
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+  #leftside > p{
+    margin-top: 0;
+    font-size: 12px
+  }
+
+    </style>
+  </head>
+
+  <body>
+    <!-- <h1>Youtube</h1> -->
+    <div id="main" >
+      <div id="youTubeMain">
+        <img src="https://cdn-icons-png.flaticon.com/128/1828/1828859.png">
+        
+        <div id="youtubelogo">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+          <h3>YouTube</h3>
+        </div>
+      </div>
+
+      <div id="searchbar">
+        <input type="text" id="search" />
+        <button id="buttonSearch" onclick="searchVideos()">Search</button>
+        <img src="https://img.icons8.com/material-sharp/2x/microphone.png" >
+        
+        <!-- <button>
+          <img src="https://img.icons8.com/ios/2x/search.png">
+          
+        </button> -->
+      </div>
+
+      <div id="fourimage">
+        <img src="https://static.thenounproject.com/png/3774479-200.png" alt="">
+        <img src="https://img.icons8.com/ios-glyphs/2x/small-icons.png" alt="">
+        <img src="https://static.thenounproject.com/png/4429504-200.png" alt="">
+        <img src="https://yt3.ggpht.com/yti/APfAmoECc2kaU9Rg_VikuD8o40hJMPTNwE69-8yHYzdf3A=s88-c-k-c0x00ffffff-no-rj-mo" alt="">
+      </div>
+    </div>
+    <!-- <hr/> -->
+
+    <div id="mid">
+      <div id="leftside">
+        <img src="https://cdn-icons-png.flaticon.com/128/20/20176.png" >
+        <p >Home</p><br/>
+        <img src="https://cdn-icons-png.flaticon.com/128/77/77521.png">
+        <p>Explore</p><br/>
+        <img src="https://cdn-icons.flaticon.com/png/128/2989/premium/2989849.png?token=exp=1638791864~hmac=19625742918eba64865ebd44a442d979">
+        <p style="margin-left:-10px;">Subscription</p><br/>
+        <img src="https://img.icons8.com/material-outlined/2x/video-gallery.png">
+        <p>Library</p>
+      </div>
+
+      <div id="search_results"></div>
+    </div>
+  </body>
+  
+</html>
+<script>
+ 
+
+  let API = "AIzaSyD_jEmMiD2ZAK6v8-jIgKm-7DaYv-uTZ3I";
+
+  let search_results_div = document.getElementById("search_results");
+
+  
+  async function searchVideos() {
+    try {
+      document.getElementById("search_results").innerHTML = " ";
+      let inp = document.getElementById("search").value;
+
+      let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${inp}&key=${API}&type=video&maxResults=32&part=snippet&chart=mostPopular`);
+
+
+      // let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?maxResults=20&q=trending%20video&type=video&key=${API}&part=snippet`)
+      let data = await res.json();
+      console.log("data:", data);
+
+      let array_of_videos = data.items;
+
+      appendVideos(array_of_videos);
+    } 
+    catch (err) {
+      console.log("You counter error", err);
+    }
+  }
+  //appending data on webpage
+
+  const appendVideos = (arr) => {
+
+    arr.forEach(({snippet, id: { videoId }} ) => {
+      // console.log("videoId:", videoId);
+      let div = document.createElement("div");
+      
+      let url = snippet.thumbnails.medium.url;
+
+      let image = document.createElement('img');
+      image.src = url;
+      image.style.width = "300px";
+
+      let title = snippet.title;
+
+      let h4 = document.createElement('h4');
+      h4.innerText = title;
+
+      let channel_name = snippet.channelTitle;
+      let h4_1 = document.createElement('h4');
+      h4_1.innerText = channel_name;
+
+      let video_data = {
+        snippet,
+        videoId,
+      }
+      // let iframe = document.createElement("iframe");
+      // iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      // iframe.width = "280px";
+      // iframe.height = "200px";
+      // iframe.setAttribute("allowfullscreen", true);
+      div.append(image,h4, channel_name);
+      div.onclick = () => {
+        showvideo(video_data);
+      } 
+
+      search_results_div.append(div);
+    });
+  };
+
+  const showvideo = (d) => {
+  console.log('d:', d)
+
+    localStorage.setItem("clicked_item",JSON.stringify(d));
+    window.location.href = "viewPage.html";
+  }
+
+
+
+
+  
+  window.addEventListener("load", async() => {
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=IN&key=${API}&maxResults=32`);
+
+    // let rese = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${inp}&key=${API}&type=video&maxResults=32&part=snippet&chart=mostPopular`)
+    // console.log('res:', rese);
+    let data2 = await res.json();
+    console.log('data2:', data2);
+
+    let popular_videos = data2.items;
+
+    appendMostpop(popular_videos);
+
+  });
+
+  const appendMostpop = (arr1) => {
+    arr1.forEach(({snippet, id:{videoId}}) => {
+
+      let div = document.createElement("div");
+      
+      let url = snippet.thumbnails.medium.url;
+
+      let image = document.createElement('img');
+      image.src = url;
+      image.style.width = "300px" 
+
+      let title = snippet.title;
+
+      let h4 = document.createElement('h4');
+      h4.innerText = title;
+
+      let channel_name = snippet.channelTitle;
+      let h4_1 = document.createElement('h4');
+      h4_1.innerText = channel_name;
+
+      div.append(image,h4,h4_1)
+      search_results_div.append(div);
+    })
+  }
+</script>

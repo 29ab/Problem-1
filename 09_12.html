@@ -1,0 +1,124 @@
+{
+    From Swanand Kadam to Everyone 04:10 PM
+    const port = 5000
+    
+    const path = require('path')
+    
+    
+    const jsonServer = require('json-server')
+    
+    const server = jsonServer.create()
+    
+    const router = jsonServer.router(path.join(__dirname), 'db.json')
+    
+    const middlewares = jsonServer.defaults()
+    
+    server.use(middlewares)
+    
+    server.use(jsonServer.bodyParser)
+    
+    server.use('/api', router)
+    
+    server.listen(PORT, () => console.log(`JSON SERVER IS RUNNING ON PORT ${port}`))
+    //setting up a backend
+    
+    const port = 5000
+    
+    const path = require('path')
+    
+    
+    const jsonServer = require('json-server')
+    
+    const server = jsonServer.create()
+    
+    const router = jsonServer.router(path.join(__dirname, 'db.json'))
+    
+    const middlewares = jsonServer.defaults()
+    
+    server.use(middlewares)
+    
+    server.use(jsonServer.bodyParser)
+    
+    server.use('/api', router)
+    
+    server.listen(port, () => console.log(`JSON SERVER IS RUNNING ON PORT ${port}`))
+    From Swanand Kadam to Everyone 04:21 PM
+    //setting up a backend
+    
+    const port = 5000
+    
+    const path = require('path')
+    
+    
+    const jsonServer = require('json-server')
+    
+    const server = jsonServer.create()
+    
+    const router = jsonServer.router(path.join(__dirname, 'db.json'))
+    
+    const middlewares = jsonServer.defaults()
+    
+    server.use(middlewares)
+    
+    server.use(jsonServer.bodyParser)
+    
+    server.use('/api', router)
+    
+    server.listen(port, () => console.log(`JSON SERVER IS RUNNING ON PORT ${port}`))
+    {
+    
+    
+        "products":[
+    
+            
+        ]
+    
+    
+    }
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+      </head>
+    
+      <style>
+        div {
+          width: 13%;
+        }
+        input,
+        button {
+          margin-top: 10px;
+        }
+      </style>
+      <body>
+        <div>
+          <h1>Add Product</h1>
+          <input type="number" placeholder="id" id="id" />
+    
+          <input type="name" placeholder="name" id="name" />
+    
+          <input type="number" placeholder="price" id="price" />
+    
+          <button onclick="addProduct()">Add Product</button>
+        </div>
+    
+        <div>
+          <h1>Delete Product</h1>
+    
+          <input type="text" id="delete_id" placeholder="Enter id to Delete" />
+    
+          <button onclick="deleteProduct()">Delete Product</button>
+        </div>
+      </body>
+    </html>
+    From Swanand Kadam to Everyone 04:31 PM
+    const data = {
+    
+        id:document.getElementById('id').value,
+        name:document.getElementById('name').value,
+        price:document.getElementById('price').value
+    }
+    http://127.0.0.1:5000/api/products
+    

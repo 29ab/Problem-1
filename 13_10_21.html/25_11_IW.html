@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather report</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* #srearchCity{
+            
+        } */
+        body {
+            background-color: cadetblue;
+        }
+
+        #searchCity>input {
+            width: 400px;
+            height: 30px;
+            margin-left: 400px;
+            background-color: rgb(208, 237, 238);
+            /* color: white; */
+        }
+
+        #searchCity>button {
+            width: 80px;
+            height: 35px;
+            margin-left: -4px;
+        }
+
+        #main {
+            display: grid;
+            grid-template-columns: 500px 500px;
+            grid-gap: 40px;
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="searchCity">
+        <input type="text" id="city" placeholder="Search City" />
+        <button onclick="getWeather()">Search</button>
+    </div>
+    <div id="main">
+        <div id="showdata"></div>
+        <div id="forMap"></div>
+    </div>
+    <div id="SevenDays"></div>
+
+</body>
+
+</html>
+<script>
+    let key = "b96fe69ed4aec8fc5b1bb4a565308dd5";
+
+    // let key = " 248611b4874cf10cdfdace96277712c7";  // new key 
+
+    async function getWeather() {
+        try {
+            let city = document.querySelector('#city').value;
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+
+            // new link with cnt
+            // let url = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&appid=${key}`;
+
+            let res = await fetch(url);
+            let data = await res.json();
+            // console.log('data:', data)
+
+            let temp = data.main.temp;
+            temp = Math.round(temp);
+            console.log('temp:', temp + "°C");
+
+            appendTemp(data);
+            appendMAP(city);
+
+        }
+        catch (err) {
+            console.log('err:', err);
+        }
+    }
+
+    function appendTemp(data) {
+        console.log(data);
+        document.getElementById('showdata').innerHTML = " ";
+        let div1 = document.createElement("div");
+        // div1.innerHTML = " ";
+        div1.setAttribute("id", "first_div");
+        div1.style.width = "180px";
+        div1.style.backgroundColor = "#B2DFDB";
+        div1.style.borderRadius = "30%";
+        div1.style.textAlign = "center";
+        div1.style.display = "grid";
+        div1.style.gridTemplateColumns = "30px 50px";
+        div1.style.columnGap = "30px";
+        div1.style.border = "1px solid black";
+        // div1.style.fontFamily = "font-family: '';"
+        // div1.style.fontWeight = "400"
+        // div1.style.display = "grid";
+
+        let div2 = document.createElement("div");
+        div2.setAttribute("id", "sec_div");
+
+        let p1 = document.createElement('p');
+        p1.innerHTML = "<strong>Min Temp- <strong/>";
+        let p2 = document.createElement('p');
+        p2.innerHTML = "<strong>Max Temp- <strong/>";
+        let p3 = document.createElement('p');
+        p3.innerHTML = "<strong>Wind Speed- <strong/>";
+        let p4 = document.createElement('p');
+        p4.innerHTML = "<strong>Sunrise- <strong/>";
+        let p5 = document.createElement('p');
+        p5.innerHTML = "<strong>Sunset- <strong/>";
+        let p6 = document.createElement('h3');
+        p6.innerHTML = "<strong>City- <strong/>"
+
+        let name = data.name;
+
+        let temprature = data.main.temp;
+        temprature = Math.round(temprature);
+        // console.log('temprature:', temprature)
+
+        let min_temp = data.main.temp_min
+        min_temp = Math.round(min_temp) + " °C";
+        p1.append(min_temp);
+
+        let max_temp = data.main.temp_max;
+        max_temp = Math.round(max_temp) + " °C";
+        p2.append(max_temp);
+
+        let wind_s = data.wind.speed;
+        wind_s = wind_s + " km";
+        p3.append(wind_s);
+
+        let Sunrise = data.sys.sunrise;
+        let date = new Date(Sunrise * 1000);
+        p4.append(date);
+
+        console.log('date:', date)
+
+        let Sunset = data.sys.sunset;
+        let date2 = new Date(Sunset * 1000);
+        p5.append(date2);
+
+        p6.append(name)
+        
+        let icons = data.weather[0].icon;
+        console.log('icons:', icons)
+        let img = document.createElement("img");
+        img.src = `http://openweathermap.org/img/wn/${icons}.png`;
+        img.style.marginTop = "25px"
+
+        let h3 = document.createElement("h3");
+        h3.textContent = temprature + "°C";
+        h3.style.fontSize = "35px";
+
+        div1.append(img, h3);
+        div2.append(p6, p1, p2, p3, p4, p5);
+
+        let putting_data = document.getElementById("showdata");
+        putting_data.append(div1, div2);
+
+        let seven_day =  document.getElementById("SevenDays");
+
+        let icons2 = document.createElement("img");
+
+        let min_temp2 = document.createElement('p');
+        let max_temp2 = document.createElement('p');
+        let day2 = document.createElement('p');
+
+        icons2.src = ``
+
+
+    }
+
+    function appendMAP(city) {
+        document.getElementById('forMap').innerHTML = " ";
+        let showMap = document.getElementById("forMap");
+
+        let ifr = document.createElement("iframe");
+        ifr.src = `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`
+        ifr.style.width = "500px";
+        ifr.style.height = "350px";
+
+        showMap.append(ifr);
+    }
+
+    
+
+    
+
+</script>

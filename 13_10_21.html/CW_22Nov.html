@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 1</title>
+  </head>
+
+  <style>
+    form {
+      width: 10%;
+      margin: 5%;
+    }
+    input {
+      margin-top: 2%;
+    }
+  </style>
+
+  <body>
+    <form onsubmit="getPaymentDetails(event)">
+      <input type="number" id="number" placeholder="Card number" />
+      <input type="number" id="cvv" placeholder="CVV" />
+
+      <input type="number" id="otp" placeholder="OTP" />
+
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+
+<script>
+    function getPaymentDetails(e){
+        e.preventDefault();
+        
+        const data = {
+            number: document.querySelector("#number").value,
+            cvv:document.querySelector("#cvv").value,
+            otp:document.querySelector("#otp").value,
+        };
+       
+        console.log(data);
+        setTimeout(success,3000);
+        // don't use success() because it will go to stack and called right away
+        // success is called - callback function
+        
+    }
+
+        function success(){
+            alert("payment successfull");
+        }
+</script>

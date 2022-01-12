@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="startSS()">start slide show</button>
+    <button>Stop Slideshow</button>
+</body>
+</html>
+<script>
+    let i = 0;
+    function startSS(){
+
+        let images = JSON.parse(localStorage.getItem("images"));
+        setInterval(function (){
+            let img = document.createElement("img")
+            img.setAttribute("src",images[i]);
+            div.appendChild(img);
+        })
+    }
+</script>
