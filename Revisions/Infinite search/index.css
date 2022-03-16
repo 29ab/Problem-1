@@ -1,0 +1,43 @@
+#Students{
+    display: flex;
+}
+#Students > h1{
+    width: 300px;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 20%;
+    margin-left: 20%;
+    
+}
+
+#infinite_users{
+    margin: auto;
+    width: 200px;
+    height: 590px;
+    border:5px solid #800000;
+    overflow: auto;
+    /* margin-top: 50px; */
+    box-shadow: 0 4px 8px 0 rgba(128, 0, 0,1), 0 6px 20px 0 rgba(128, 0, 0,1);
+    
+}
+li{
+    list-style-type: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    padding: 5px 0;
+    
+}
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+
+  ul{
+    background-color: #EF5350;
+  }

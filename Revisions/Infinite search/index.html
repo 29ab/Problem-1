@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Infinite Scrolling</title>
+</head>
+
+<body>
+    <div id="Students">
+        <h1>Infinite Students</h1>
+        <ul id="infinite_users">
+
+        </ul>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let Userlist = document.querySelector('#infinite_users');
+
+    // Add 20 items.
+    let nextItem = 1;
+    let loadMore = function () {
+        for (let i = 0; i < 25; i++) {
+            let User = document.createElement('li');
+            User.innerText = 'Masai Student ' + nextItem++;
+            Userlist.appendChild(User);
+        }
+    }
+
+    // Detect when scrolled to bottom.
+    Userlist.addEventListener('scroll', function () {
+        if (Userlist.scrollTop + Userlist.clientHeight >= Userlist.scrollHeight) {
+            loadMore();
+        }
+    });
+
+    // Initially load some items.
+    loadMore();
+
+</script>
